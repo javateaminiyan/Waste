@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "569624951379",
+    "firebase_url": "https://solidwaste-f6aa1.firebaseio.com",
+    "project_id": "solidwaste-f6aa1",
+    "storage_bucket": "solidwaste-f6aa1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569624951379:android:97527d72ecd9c700",
+        "android_client_info": {
+          "package_name": "com.example.admin.solidwaste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569624951379-v49gfdqvknss78h4qe3cp5v0dn57s7q1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.solidwaste",
+            "certificate_hash": "cfc4a3baa76bede643f894f2ca7f87347249a2c1"
+          }
+        },
+        {
+          "client_id": "569624951379-1l9moljf5qptf6nu9l32nulasmos6aq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwZV1fkTZv-BoRmCr8drfZ4_-GwNZRZsk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569624951379-1l9moljf5qptf6nu9l32nulasmos6aq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

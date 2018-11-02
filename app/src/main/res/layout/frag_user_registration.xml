@@ -1,0 +1,326 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:autofillHints="@string/name"
+                    android:hint="@string/entername"
+                    android:inputType="text"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/name"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_iconLeft="@drawable/user"
+                    app:met_iconPadding="8dp"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/mobileno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+
+                    android:autofillHints="@string/mobileno"
+                    android:hint="@string/entermobilenumber"
+                    android:inputType="number"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/mobileno"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_maxCharacters="10"
+                    app:met_minCharacters="10"
+                    android:maxLength="10"
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_iconLeft="@drawable/mobile"
+                    app:met_iconPadding="8dp"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <!--<com.rengwuxian.materialedittext.MaterialEditText-->
+                    <!--android:id="@+id/enterotp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="8dp"-->
+<!--android:visibility="visible"-->
+                    <!--android:autofillHints="@string/enterotp"-->
+                    <!--android:hint="@string/enterotp"-->
+                    <!--android:inputType="number"-->
+                    <!--android:maxLength="6"-->
+                    <!--android:textColorHint="@android:color/holo_blue_dark"-->
+                    <!--app:met_clearButton="true"-->
+                    <!--app:met_floatingLabel="normal"-->
+                    <!--app:met_floatingLabelAlwaysShown="false"-->
+                    <!--app:met_floatingLabelAnimating="true"-->
+                    <!--app:met_floatingLabelPadding="8dp"-->
+                    <!--app:met_floatingLabelText="@string/enterotp"-->
+                    <!--app:met_floatingLabelTextColor="@android:color/holo_blue_dark"-->
+                    <!--app:met_floatingLabelTextSize="14dp"-->
+                    <!--app:met_iconLeft="@drawable/otp"-->
+                    <!--app:met_iconPadding="8dp"-->
+                    <!--app:met_maxCharacters="6"-->
+                    <!--app:met_minCharacters="6"-->
+
+                    <!--app:met_primaryColor="@android:color/holo_blue_dark"-->
+                    <!--app:met_singleLineEllipsis="true" />-->
+
+
+
+
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:autofillHints="@string/email"
+                    android:hint="@string/enteremail"
+                    android:inputType="text"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/email"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_iconLeft="@drawable/email"
+                    app:met_iconPadding="8dp"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:autofillHints="@string/address"
+                    android:hint="@string/enteraddress"
+                    android:inputType="text"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/address"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_iconLeft="@drawable/address"
+                    app:met_iconPadding="8dp"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/upiid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:autofillHints="@string/upiid"
+                    android:hint="@string/enterupiid"
+                    android:inputType="number"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    android:maxLength="12"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/upiid"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_iconLeft="@drawable/account"
+                    app:met_iconPadding="8dp"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:autofillHints="@string/password"
+                    android:hint="@string/enterpassword"
+                    android:maxLength="10"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_clearButton="true"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    android:inputType="textPassword"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/password"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_iconLeft="@drawable/lock"
+                    app:met_iconPadding="8dp"
+                    app:met_maxCharacters="10"
+                    app:met_minCharacters="6"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/confirmpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:autofillHints="@string/confirmpassword"
+                    android:hint="@string/enterconfirmpassword"
+                    android:maxLength="10"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_clearButton="true"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    android:inputType="textPassword"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/confirmpassword"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_iconLeft="@drawable/lock"
+                    app:met_iconPadding="8dp"
+                    app:met_maxCharacters="10"
+                    app:met_minCharacters="6"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true" />
+
+
+                <Button
+                    android:id="@+id/login_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@android:color/holo_blue_dark"
+                    android:text="@string/signup"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="2"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="right"
+                        android:text="@string/alreadyaccount" />
+
+                    <TextView
+                        android:id="@+id/signup_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed"
+                        android:gravity="left"
+                        android:text="@string/login"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

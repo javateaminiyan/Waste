@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.admin.solidwaste">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <uses-permission android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!-- Access Google based webservices -->
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!-- My Location -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.example.mapdemo.permission.MAPS_RECEIVE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.Registration"
+
+            android:parentActivityName=".activity.Login"
+
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".activity.Login" />
+        <activity
+            android:name=".activity.ForgotPassword"
+            android:parentActivityName=".activity.Login"
+
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserDashboard"
+            android:screenOrientation="portrait"
+
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".activity.AdminDashboard"
+            android:screenOrientation="portrait"/>
+
+        <service android:name=".firebaseservice.InstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".firebaseservice.FirebaseMessaging">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activity.ContactUs"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Profile"
+            android:screenOrientation="portrait" />
+
+
+        <!-- Add your API key here -->
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_ILgsfZCZoFIKMb" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <!--<activity -->
+        <!--android:name=".activity.NearByShop" -->
+        <!--android:label="@string/title_activity_near_by_shop"></activity> -->
+        <activity
+            android:name=".map.ViewDirections"
+            android:label="@string/title_activity_view_directions"
+
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.MapDragger"
+            android:label="@string/title_activity_map_dragger"
+
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".map.NearByLocationOfShop"
+            android:label="@string/title_activity_near_by_location_of_shop"
+
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".activity.NewProductActivity"
+            android:parentActivityName=".activity.AdminDashboard"
+
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.SlabRateActivity"
+            android:parentActivityName=".activity.AdminDashboard"
+
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".activity.ViewProductActivity"
+            android:parentActivityName=".activity.AdminDashboard"
+
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:parentActivityName=".activity.AdminDashboard"
+
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OrderDetailsActivity"
+            android:parentActivityName=".activity.MyRequestActivity"
+
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".activity.MyRequestActivity"
+            android:parentActivityName=".activity.AdminDashboard"
+
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".paymenttransfergateway.PaymentActivity"
+
+            android:screenOrientation="portrait" />
+
+
+        <receiver android:name=".service.InternetCheck">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:name=".service.SMSReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

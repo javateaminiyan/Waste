@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/productname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/productname"
+                android:drawableRight="@drawable/ic_arrow_down_black_24dp"
+                android:focusable="false"
+                android:hint="@string/productname"
+                android:inputType="text"
+                android:textColorHint="@android:color/holo_blue_dark"
+                android:textSize="12dp"
+                app:met_autoValidate="false"
+                app:met_errorColor="@android:color/holo_red_dark"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelAlwaysShown="false"
+                app:met_floatingLabelAnimating="true"
+                app:met_floatingLabelPadding="8dp"
+                app:met_floatingLabelText="@string/productname"
+                app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_primaryColor="@android:color/holo_blue_dark"
+                app:met_singleLineEllipsis="true"
+                app:met_underlineColor="@color/white" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/type"
+                android:drawableRight="@drawable/ic_arrow_down_black_24dp"
+                android:focusable="false"
+                android:hint="@string/type"
+                android:inputType="text"
+                android:textColorHint="@android:color/holo_blue_dark"
+                android:textSize="12dp"
+                app:met_autoValidate="false"
+                app:met_bottomTextSize="8dp"
+
+                app:met_errorColor="@android:color/holo_red_dark"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelAlwaysShown="false"
+                app:met_floatingLabelAnimating="true"
+                app:met_floatingLabelPadding="8dp"
+                app:met_floatingLabelText="@string/type"
+                app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_helperText=""
+                app:met_helperTextAlwaysShown="false"
+                app:met_helperTextColor="@android:color/background_dark"
+                app:met_iconPadding="8dp"
+                app:met_primaryColor="@android:color/holo_blue_dark"
+                app:met_singleLineEllipsis="true"
+                app:met_underlineColor="@color/white" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/color"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/color"
+                android:hint="@string/color"
+                android:inputType="text"
+                android:textColorHint="@android:color/holo_blue_dark"
+                android:textSize="12dp"
+                app:met_autoValidate="false"
+                app:met_bottomTextSize="8dp"
+                app:met_clearButton="true"
+                app:met_errorColor="@android:color/holo_red_dark"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelAlwaysShown="false"
+                app:met_floatingLabelAnimating="true"
+                app:met_floatingLabelPadding="8dp"
+                app:met_floatingLabelText="@string/color"
+                app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_helperText=""
+                app:met_helperTextAlwaysShown="false"
+                app:met_helperTextColor="@android:color/background_dark"
+                app:met_iconPadding="8dp"
+                app:met_primaryColor="@android:color/holo_blue_dark"
+                app:met_singleLineEllipsis="true"
+                app:met_underlineColor="@color/white" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/grade"
+                android:drawableRight="@drawable/ic_arrow_down_black_24dp"
+                android:focusable="false"
+                android:hint="@string/grade"
+                android:inputType="text"
+                android:textColorHint="@android:color/holo_blue_dark"
+                android:textSize="12dp"
+                app:met_autoValidate="false"
+                app:met_bottomTextSize="8dp"
+
+                app:met_errorColor="@android:color/holo_red_dark"
+                app:met_floatingLabel="normal"
+                app:met_floatingLabelAlwaysShown="false"
+                app:met_floatingLabelAnimating="true"
+                app:met_floatingLabelPadding="8dp"
+                app:met_floatingLabelText="@string/grade"
+                app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                app:met_floatingLabelTextSize="14dp"
+                app:met_helperText=""
+                app:met_helperTextAlwaysShown="false"
+                app:met_helperTextColor="@android:color/background_dark"
+                app:met_iconPadding="8dp"
+                app:met_primaryColor="@android:color/holo_blue_dark"
+                app:met_singleLineEllipsis="true"
+                app:met_underlineColor="@color/white" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/apprordervalue"
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/app_order_val"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/edittext"
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/selectunit"
+
+                        android:textColor="@android:color/holo_blue_light"
+                        android:textSize="12dp" />
+
+                    <EditText
+                        android:id="@+id/unit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/edittext"
+                        android:drawablePadding="2dp"
+                        android:drawableRight="@drawable/ic_arrow_down_black_24dp"
+                        android:focusable="false"
+                        android:padding="8dp"
+                        android:textColor="@android:color/black"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lin_sugession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1.2"
+                    android:text="@string/suggession"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/sugesstionval"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:text=" "
+                    android:textColor="@android:color/holo_green_dark"
+                    android:textSize="12dp" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/productimage"
+                android:textColor="@android:color/holo_blue_light" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="5">
+
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="2"
+                    android:onClick="click"
+                    app:srcCompat="@android:drawable/ic_menu_camera" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/rect_box"
+                    android:elevation="2dp"
+                    android:textColorHint="@color/blue"
+                    android:hint="@string/enterdescription"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/white"
+                android:layout_marginBottom="15dp"
+                android:background="@color/colorPrimary"
+                android:text="Submit" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

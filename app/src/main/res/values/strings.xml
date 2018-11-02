@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Solid Waste</string>
+
+    <string name="merchant_registration">Merchant Registration</string>
+    <string name="user_registration">User Registration</string>
+    <string name="emailormobileno">Email/MobileNo</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="forgotpassword">Forgot Password ?</string>
+    <string name="account_yet">Don\'t have a account yet ?</string>
+    <string name="signup">Sign Up</string>
+    <string name="enterpassword">Enter Password</string>
+    <string name="forgot_password_content">Enter Your Email/Mobile No To Receive OTP</string>
+    <string name="sendotp">Send OTP</string>
+    <string name="enterconfirmpassword">Confirm Password</string>
+    <string name="enterotp">Enter Your OTP</string>
+    <string name="alreadyaccount">Already have a account ?</string>
+    <string name="name">Name</string>
+    <string name="entername">Enter your name</string>
+    <string name="mobileno">Mobile Number</string>
+    <string name="entermobilenumber">Enter your Mobile No</string>
+    <string name="email">Email</string>
+    <string name="enteremail">Enter Your Email</string>
+    <string name="enteraddress">Enter Your Address</string>
+    <string name="address">Address</string>
+    <string name="upiid">Upi Id</string>
+    <string name="enterupiid">Enter Upi id</string>
+    <string name="confirmpassword">Confirm Password</string>
+    <string name="shopname">Shop Name</string>
+    <string name="entershopname">Enter ShopName</string>
+    <string name="panno">Pan No</string>
+    <string name="enterPanno">Enter Panno</string>
+    <string name="gstno">Gst No</string>
+    <string name="entergstno">Enter GstNo</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="hosur_office"><u>Hosur Office</u></string>
+    <string name="hosur_company_address">51, Step Colony, Dharga, Hosur - 635126 \n Tamilnadu, India.</string>
+    <string name="hosur_company_landline">Landline : 04344 270900</string>
+    <string name="hosur_company_mobile">Mobile No : 9344 270900</string>
+    <string name="hosur_company_email">info@prematix.com</string>
+    <string name="blr_company_email">infoblr@prematix.com</string>
+    <string name="blr_company_landline">Landline : 080255 22220</string>
+    <string name="blr_company_address">No.589, 2nd floor, VP Chambers, \n 1st Cross, 3rd Block, Koramangala, \n Bengaluru - 560034, \n Karnataka, India.</string>
+    <string name="blr_office"><u>Bangalore Office</u></string>
+
+    <string name="prematix">Prematix Software Solutions Pvt Ltd</string>
+    <string name="city">City</string>
+    <string name="title_activity_near_by_shop">Map</string>
+    <string name="title_activity_view_directions">Map</string>
+    <string name="title_activity_map_dragger">Map</string>
+    <string name="title_activity_near_by_location_of_shop">Map</string>
+
+
+    <string name="productname">Product /Service Name</string>
+    <string name="type">Type</string>
+    <string name="color">Color</string>
+    <string name="grade">Grade</string>
+    <string name="apprordervalue">Approximate Product Value( \u20B9 )</string>
+    <string name="selectunit">Select Per Unit</string>
+    <string name="suggession">Suggestion :</string>
+    <string name="productimage">Product Image (optional)</string>
+    <string name="enterdescription">Enter Description (optional)</string>
+    <string name="submit">Submit</string>
+    <string name="enterval">Enter Name</string>
+    <string name="Cancel">Cancel</string>
+    <string name="tv_productname">Product Name</string>
+
+    <string name="action_search">Search Product</string>
+    <string name="search_hint">Search</string>
+    <string name="action_filter">Filter</string>
+    <string name="notification">Notification</string>
+
+</resources>

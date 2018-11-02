@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context=".activity.Profile">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center_horizontal"
+                android:text="@string/name"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/emailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+
+                android:gravity="center_horizontal"
+                android:text="@string/email"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/layout_showdetails"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_mobileno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mobileno"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_mobileno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/mobileno"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/label_emailid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="8dp"
+                    android:text="@string/email"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/email"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/label_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+
+
+                    android:text="@string/address"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/address"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/label_upiid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="8dp"
+                    android:text="@string/upiid"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_upiid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/upiid"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/label_shopname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+
+                    android:text="@string/shopname"
+
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_shopname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/shopname"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/label_panno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+
+                    android:text="@string/panno"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_panno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/email"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/label_gstno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/gstno"
+
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_gstno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/rectangle"
+                    android:padding="8dp"
+                    android:text="@string/email"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_editshowdetails"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtmobileno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/mobileno"
+                    android:hint="@string/mobileno"
+                    android:inputType="number"
+                    android:maxLength="10"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/mobileno"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/email"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/email"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtnameofshop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/shopname"
+                    android:hint="@string/shopname"
+                    android:inputType="text"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/shopname"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/address"
+                    android:hint="@string/address"
+                    android:inputType="text"
+                    android:maxLines="2"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/address"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtUpi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/upiid"
+                    android:hint="@string/upiid"
+                    android:inputType="number"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/upiid"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtpanno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/panno"
+                    android:hint="@string/panno"
+                    android:inputType="number"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/panno"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtgstno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/gstno"
+                    android:hint="@string/gstno"
+                    android:inputType="number"
+
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/gstno"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtpassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:autofillHints="@string/password"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:maxLength="8"
+                    android:textColorHint="@android:color/holo_blue_dark"
+                    app:met_autoValidate="false"
+                    app:met_bottomTextSize="8dp"
+                    app:met_clearButton="true"
+                    app:met_errorColor="@android:color/holo_red_dark"
+                    app:met_floatingLabel="normal"
+                    app:met_floatingLabelAlwaysShown="false"
+                    app:met_floatingLabelAnimating="true"
+                    app:met_floatingLabelPadding="8dp"
+                    app:met_floatingLabelText="@string/password"
+                    app:met_floatingLabelTextColor="@android:color/holo_blue_dark"
+                    app:met_floatingLabelTextSize="14dp"
+                    app:met_helperText=""
+                    app:met_helperTextAlwaysShown="false"
+                    app:met_helperTextColor="@android:color/background_dark"
+
+                    app:met_maxCharacters="8"
+                    app:met_minCharacters="8"
+                    app:met_primaryColor="@android:color/holo_blue_dark"
+                    app:met_singleLineEllipsis="true"
+                    app:met_underlineColor="@color/white" />
+
+                <!--<com.rengwuxian.materialedittext.MaterialEditText-->
+                <!--android:id="@+id/enterotp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="8dp"-->
+                <!--android:autofillHints="@string/enterotp"-->
+                <!--android:hint="@string/enterotp"-->
+                <!--android:inputType="number"-->
+                <!--android:maxLength="6"-->
+                <!--android:textColorHint="@android:color/holo_blue_dark"-->
+                <!--android:visibility="visible"-->
+                <!--app:met_clearButton="true"-->
+                <!--app:met_floatingLabel="normal"-->
+                <!--app:met_floatingLabelAlwaysShown="false"-->
+                <!--app:met_floatingLabelAnimating="true"-->
+                <!--app:met_floatingLabelPadding="8dp"-->
+                <!--app:met_floatingLabelText="@string/enterotp"-->
+                <!--app:met_floatingLabelTextColor="@android:color/holo_blue_dark"-->
+                <!--app:met_floatingLabelTextSize="14dp"-->
+                <!--app:met_iconLeft="@drawable/otp"-->
+                <!--app:met_iconPadding="8dp"-->
+                <!--app:met_maxCharacters="6"-->
+                <!--app:met_minCharacters="6"-->
+
+                <!--app:met_primaryColor="@android:color/holo_blue_dark"-->
+                <!--app:met_singleLineEllipsis="true" />-->
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
