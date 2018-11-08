@@ -137,6 +137,13 @@ public interface NetworkInterface {
     Observable<Add_Product_Response> addProductWitoutImage(@Query("productname") String productName, @Query("product_cost") String product_cost, @Query("userid") String userid, @Query("productdescription") String product_description, @Query("productunit") String productunit, @Query("type") String type, @Query("color") String color, @Query("grade") String grade);
 
 
+
+    //real api
+    @Multipart
+    @POST("v1/Add_products")
+    @Headers("access_token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzY5OTMyNjN9.Lpot7r_O2WjKfTGwUlm7PRwqgal3DW0ctsCgoBhzy9A")
+    Observable<Add_Product_Response> addProduct(@Part MultipartBody.Part image, @Query("productname") String productName, @Query("product_cost") String product_cost, @Query("userid") String userid, @Query("productdescription") String product_description, @Query("productunit") String productunit, @Query("type") String type, @Query("color") String color, @Query("grade") String grade);
+
     @POST("v1/solid_product_update")
     @Headers("access_token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzY5OTMyNjN9.Lpot7r_O2WjKfTGwUlm7PRwqgal3DW0ctsCgoBhzy9A")
     Observable<Product_update_response> updateProductwithoutImage(@Query("productname") String productName,
@@ -147,16 +154,10 @@ public interface NetworkInterface {
                                                                   @Query("productdescription") String productDescription,
                                                                   @Query("type") String type,
                                                                   @Query("color") String color,
-                                                                  @Query("grade") String grade
+                                                                  @Query("grade") String grade,
+                                                                  @Query("enableorhide") String enableorhide
     );
 
-
-
-    //real api
-    @Multipart
-    @POST("v1/Add_products")
-    @Headers("access_token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzY5OTMyNjN9.Lpot7r_O2WjKfTGwUlm7PRwqgal3DW0ctsCgoBhzy9A")
-    Observable<Add_Product_Response> addProduct(@Part MultipartBody.Part image, @Query("productname") String productName, @Query("product_cost") String product_cost, @Query("userid") String userid, @Query("productdescription") String product_description, @Query("productunit") String productunit, @Query("type") String type, @Query("color") String color, @Query("grade") String grade);
 
 
 
@@ -171,7 +172,8 @@ public interface NetworkInterface {
                                                       @Query("productdescription") String productDescription,
                                                       @Query("type") String type,
                                                       @Query("color") String color,
-                                                      @Query("grade") String grade
+                                                      @Query("grade") String grade,
+                                                      @Query("enableorhide") String enableorhide
     );
 
 

@@ -153,11 +153,11 @@ public class NewProduct extends BasePresenter<NewProductContract.view> implement
         if (file != null) {
             RequestBody reqFile = RequestBody.create(MediaType.parse("*/*"), file);
             body = MultipartBody.Part.createFormData("imageupload", file.getName(), reqFile);
-            return networkClient.getApiInterface(retrofit).updateProduct(body, productName, productcost, userid, productunit, productid, productdescrption, type, color, grade);
+            return networkClient.getApiInterface(retrofit).updateProduct(body, productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,"active");
 
         } else {
 
-            return networkClient.getApiInterface(retrofit).updateProductwithoutImage(productName, productcost, userid, productunit, productid, productdescrption, type, color, grade);
+            return networkClient.getApiInterface(retrofit).updateProductwithoutImage(productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,"active");
 
 
         }
