@@ -125,7 +125,7 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
 
         pref_userId = sharedPreferences.getString(CommonHelper.sharedpref_userid, null);
 
-        Log.e("TAG", "MY_REQUESTACTVITY" + sharedPreferences.getString(sharedpref_typeofuser, null));
+   //     Log.e("TAG", "MY_REQUESTACTVITY" + sharedPreferences.getString(sharedpref_typeofuser, null));
 
         myRequestPresenter.loadMyData(pref_userId, sharedPreferences.getString(sharedpref_typeofuser, null));
 
@@ -255,7 +255,7 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
     @Override
     public void loadData(ArrayList<MyRequestResponseResponse> myRequestResponseResponse) {
 
-        Log.e("fdx", myRequestResponseResponse.get(0).getproductimage() + "fv");
+   //     Log.e("fdx", myRequestResponseResponse.get(0).getproductimage() + "fv");
 
         shimmerFrameLayout.stopShimmerAnimation();
 
