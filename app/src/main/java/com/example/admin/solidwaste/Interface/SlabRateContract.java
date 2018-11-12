@@ -8,6 +8,8 @@ public interface SlabRateContract {
     interface view{
 
         void ViewSlabRate(Products slabBeanList);
+
+        void showResult(String msg);
     }
 
     interface model{

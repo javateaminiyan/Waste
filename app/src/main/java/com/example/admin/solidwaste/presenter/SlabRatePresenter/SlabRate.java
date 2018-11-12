@@ -52,7 +52,11 @@ public class SlabRate extends BasePresenter<SlabRateContract.view> implements Sl
                 .subscribe(this::handleResponse,this::handleError));
     }
     private void handleResponse(Products androidList) {
+        if(androidList.getStatusCode() == 200)
         view.ViewSlabRate(androidList);
+        else
+        view.showResult(androidList.getStatusMessage());
+
     }
     private void handleError(Throwable error) {
         Log.e("error=>",error+"");

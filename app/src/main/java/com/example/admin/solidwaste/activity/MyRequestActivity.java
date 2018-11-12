@@ -19,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.admin.solidwaste.Interface.MyRequestContract;
 import com.example.admin.solidwaste.R;
@@ -73,7 +74,8 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
 
     ProgressDialog dialog;
 
-
+    @BindView(R.id.tv_noData)
+    TextView tv_noData;
     String pref_userId, type;
 
     @Inject
@@ -96,6 +98,7 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
 
     @BindView(R.id.bottom_sheet)
     LinearLayout layoutBottomSheet;
+    String mreqType = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,11 +126,20 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
 //         type = i.getStringExtra("type");
 
 
+        if (getIntent() != null) {
+            Intent i = getIntent();
+            mreqType = i.getStringExtra("reqType");
+        }
         pref_userId = sharedPreferences.getString(CommonHelper.sharedpref_userid, null);
+        Log.e("TAG", "MY_REQUESTACTVITY" + sharedPreferences.getString(sharedpref_typeofuser, null));
+        if (mreqType != null && !mreqType.equalsIgnoreCase("merchant")) {
+            myRequestPresenter.loadDataByOrderStatus(pref_userId, sharedPreferences.getString(sharedpref_typeofuser, null), mreqType);
+        } else {
+            myRequestPresenter.loadMyData(pref_userId, sharedPreferences.getString(sharedpref_typeofuser, null));
+        }
 
-   //     Log.e("TAG", "MY_REQUESTACTVITY" + sharedPreferences.getString(sharedpref_typeofuser, null));
+        //     Log.e("TAG", "MY_REQUESTACTVITY" + sharedPreferences.getString(sharedpref_typeofuser, null));
 
-        myRequestPresenter.loadMyData(pref_userId, sharedPreferences.getString(sharedpref_typeofuser, null));
 
         dialog = new ProgressDialog(MyRequestActivity.this);
         dialog.setMessage("Loading");
@@ -182,7 +194,7 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
 
                 List<MyRequestResponseResponse> myRequestResponseResponseList = new ArrayList<>();
                 for (MyRequestResponseResponse myRequestResponseResponse : myfilterlist) {
-                    if (myRequestResponseResponse.getOrderstatus().equalsIgnoreCase("Delivered"))
+                    if (myRequestResponseResponse.getOrderstatus().equalsIgnoreCase("Process"))
                         myRequestResponseResponseList.add(myRequestResponseResponse);
                 }
                 changeAdapter(myRequestResponseResponseList);
@@ -255,25 +267,35 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
     @Override
     public void loadData(ArrayList<MyRequestResponseResponse> myRequestResponseResponse) {
 
-   //     Log.e("fdx", myRequestResponseResponse.get(0).getproductimage() + "fv");
 
         shimmerFrameLayout.stopShimmerAnimation();
 
+        tv_noData.setVisibility(View.GONE);
         lin_Nodata.setVisibility(View.GONE);
 
         ArrayList<MyRequestResponseResponse> tempElements = new ArrayList<MyRequestResponseResponse>(myRequestResponseResponse);
         Collections.reverse(tempElements);
         myfilterlist = tempElements;
 
-        ArrayList<MyRequestResponseResponse> mList = new ArrayList<>();
 
-        for (MyRequestResponseResponse mylist : myfilterlist) {
-            if (mylist.getOrderstatus().equalsIgnoreCase("pending")) mList.add(mylist);
+        if (mreqType.equalsIgnoreCase("merchant")) {
+
+            ArrayList<MyRequestResponseResponse> mList = new ArrayList<>();
+
+            for (MyRequestResponseResponse mylist : myfilterlist) {
+                if (mylist.getOrderstatus().equalsIgnoreCase("pending")) mList.add(mylist);
+
+                myRequestAdapter = new MyRequestAdapter(mList, MyRequestActivity.this, sharedPreferences.getString(sharedpref_typeofuser, null));
+
+            }
+
+        } else {
+
+            myRequestAdapter = new MyRequestAdapter(tempElements, MyRequestActivity.this, sharedPreferences.getString(sharedpref_typeofuser, null));
 
         }
 
 
-        myRequestAdapter = new MyRequestAdapter(mList, MyRequestActivity.this, sharedPreferences.getString(sharedpref_typeofuser, null));
         recyclerView.setAdapter(myRequestAdapter);
         myRequestAdapter.notifyDataSetChanged();
 
@@ -321,6 +343,14 @@ public class MyRequestActivity extends AppCompatActivity implements MyRequestCon
 
 
     }
+
+    @Override
+    public void showResult(String msg) {
+        shimmerFrameLayout.stopShimmerAnimation();
+        lin_Nodata.setVisibility(View.GONE);
+        tv_noData.setVisibility(View.VISIBLE);
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

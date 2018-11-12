@@ -136,15 +136,15 @@ public class NewProduct extends BasePresenter<NewProductContract.view> implement
     }
 
     @Override
-    public void updateProduct(File file, String productName, String productcost, String userid, String productunit, String productid, String productdescrption, String type, String color, String grade) {
+    public void updateProduct(File file, String productName, String productcost, String userid, String productunit, String productid, String productdescrption, String type, String color, String grade,String isPubliseEnabled) {
 
 
-        update_responseObservable(file, productName, productcost, userid, productunit, productid, productdescrption, type, color, grade).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribeWith(update_response());
+        update_responseObservable(file, productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,isPubliseEnabled).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribeWith(update_response());
 
     }
 
 
-    public Observable<Product_update_response> update_responseObservable(File file, String productName, String productcost, String userid, String productunit, String productid, String productdescrption, String type, String color, String grade) {
+    public Observable<Product_update_response> update_responseObservable(File file, String productName, String productcost, String userid, String productunit, String productid, String productdescrption, String type, String color, String grade,String isPubliseEnabled) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         OkHttpClient client = builder.build();
         MultipartBody.Part body = null;
@@ -153,11 +153,11 @@ public class NewProduct extends BasePresenter<NewProductContract.view> implement
         if (file != null) {
             RequestBody reqFile = RequestBody.create(MediaType.parse("*/*"), file);
             body = MultipartBody.Part.createFormData("imageupload", file.getName(), reqFile);
-            return networkClient.getApiInterface(retrofit).updateProduct(body, productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,"active");
+            return networkClient.getApiInterface(retrofit).updateProduct(body, productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,isPubliseEnabled);
 
         } else {
 
-            return networkClient.getApiInterface(retrofit).updateProductwithoutImage(productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,"active");
+            return networkClient.getApiInterface(retrofit).updateProductwithoutImage(productName, productcost, userid, productunit, productid, productdescrption, type, color, grade,isPubliseEnabled);
 
 
         }

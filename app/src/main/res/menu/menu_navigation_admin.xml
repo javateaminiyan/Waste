@@ -11,13 +11,25 @@
             android:icon="@drawable/ic_account"/>
         <item
             android:id="@+id/request"
-            android:title="Order Request"
+            android:title="User Request"
+            android:icon="@drawable/ic_friend_request"/>
+        <item
+            android:id="@+id/registration"
+            android:title="Product Registration"
             android:icon="@drawable/ic_request"/>
+        <item
+            android:id="@+id/slabdetails"
+            android:title="Slab Rate"
+            android:icon="@drawable/ic_wallet"/>
+        <item
+            android:id="@+id/registereddetails"
+            android:title="Registered Product"
+            android:icon="@drawable/ic_file_nav"/>
 
 
         <item
             android:id="@+id/addmap"
-            android:title="Merchant Shop"
+            android:title="Add Location"
             android:icon="@drawable/ic_add_location"/>
 
         <item

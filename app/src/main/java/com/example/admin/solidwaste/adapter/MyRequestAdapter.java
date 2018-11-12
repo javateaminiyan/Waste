@@ -55,7 +55,7 @@ public class MyRequestAdapter extends RecyclerView.Adapter<MyRequestAdapter.Prod
         holder.tvName.setText("Name :" + productList.get(position).getNameofuser());
         holder.tvQty.setText("Total Qty :" + productList.get(position).getQuantity());
         holder.tvMobile.setText("Mobile No :" + productList.get(position).getMobile());
-        holder.tvStatus.setText("Status  :" + productList.get(position).getOrderstatus());
+        holder.tvStatus.setText("Status  :" + productList.get(position).getOrderstatus().toUpperCase());
         holder.tvOrderId.setText("OrderId : "+productList.get(position).getOrderid());
 
         Log.e("firebase=>user", productList.get(position).getUserid()+"");

@@ -1,6 +1,7 @@
 package com.example.admin.solidwaste.utils;
 
 
+import com.example.admin.solidwaste.pojo.AdminPojo.AdminDashboardPojo;
 import com.example.admin.solidwaste.pojo.FirebaseResponsePojo.FirebaseMessagingResponse;
 import com.example.admin.solidwaste.pojo.GeneralResponse.GeneralResponse;
 import com.example.admin.solidwaste.pojo.Login.Login_Response;
@@ -229,5 +230,16 @@ public interface NetworkInterface {
     @Headers("access_token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzY5OTMyNjN9.Lpot7r_O2WjKfTGwUlm7PRwqgal3DW0ctsCgoBhzy9A")
     Observable<OrderResponse> updateOrder(@Query("orderstatus") String orderstatus, @Query("orderid") String orderid, @Query("pickupdate") String pickupdate, @Query("orderdeliverydate") String orderdeliverydate);
 
+    @GET("/v1/merchantordercount")
+    @Headers("access_token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzY5OTMyNjN9.Lpot7r_O2WjKfTGwUlm7PRwqgal3DW0ctsCgoBhzy9A")
+    Observable<AdminDashboardPojo> statusCountForAdminDashboard(@Query("merchantid") String merchantid);
 
+
+
+
+
+
+    @GET("v1/order_typewithOrderStatus")
+    @Headers("access_token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzY5OTMyNjN9.Lpot7r_O2WjKfTGwUlm7PRwqgal3DW0ctsCgoBhzy9A")
+    Observable<MyRequest> orderstatus(@Query("orderstatus") String orderstatus,@Query("merchantid")String merchantid);
 }

@@ -84,6 +84,8 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
     @BindView(R.id.unit)
     EditText unit;
 
+    @BindView(R.id.layout_togglehideorenable)
+    LinearLayout layout_togglehideorenable;
     @BindView(R.id.lin_sugession)
     LinearLayout lin_suggession;
 
@@ -102,8 +104,13 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
     @BindView(R.id.submit)
     Button btnsubmit;
 
+    @BindView(R.id.tv_publish_yes)TextView tv_publish_yes;
+    @BindView(R.id.tv_publish_no)TextView tv_publish_no;
+
 
     ProgressDialog progressDialog;
+
+    String isPublishEnabled="Active";
 
     RecyclerView.Adapter adapter;
 
@@ -153,8 +160,7 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
                 .build()
                 .inject(this);
 
-
-        s_userid = sharedPreferences.getString(CommonHelper.sharedpref_userid, "");
+         s_userid = sharedPreferences.getString(CommonHelper.sharedpref_userid, "");
 
 
         if (getIntent().getStringExtra("productname") != null) {
@@ -183,6 +189,7 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
 
         } else {
             btnsubmit.setText("Submit");
+            layout_togglehideorenable.setVisibility(View.GONE);
 
         }
 
@@ -198,7 +205,26 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
         sd_unit = new SpinnerDialog(NewProductActivity.this, newProductPresenter.UnitList(), "Search Unit", "Close");
 
         unit.setText(newProductPresenter.UnitList().get(0));
-
+        tv_publish_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_publish_no.setBackground(getResources().getDrawable(R.drawable.edittext_border));
+                tv_publish_no.setTextColor(getResources().getColor(R.color.colorPrimary));
+                tv_publish_yes.setTextColor(getResources().getColor(R.color.white));
+                tv_publish_yes.setBackground(getResources().getDrawable(R.drawable.btn_filter_apply_fill));
+                isPublishEnabled="Active";
+            }
+        });
+        tv_publish_no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_publish_yes.setBackground(getResources().getDrawable(R.drawable.edittext_border));
+                tv_publish_yes.setTextColor(getResources().getColor(R.color.colorPrimary));
+                tv_publish_no.setTextColor(getResources().getColor(R.color.white));
+                tv_publish_no.setBackground(getResources().getDrawable(R.drawable.btn_filter_apply_fill));
+                isPublishEnabled="InActive";
+            }
+        });
 
         sd_productname.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
@@ -225,7 +251,6 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
 
             }
         });
-
 
         sd_grade.bindOnSpinerListener(new OnSpinerItemClick() {
             @Override
@@ -274,10 +299,11 @@ public class NewProductActivity extends AppCompatActivity implements NewProductC
     @OnClick(R.id.submit)
     public void submit() {
 
+
         if (btnsubmit.getText().toString().equalsIgnoreCase("Update")) {
 
 
-            newProductPresenter.updateProduct(destination, productname.getText().toString(), order_val.getText().toString(), i_userId, unit.getText().toString(), String.valueOf(i_productId), description.getText().toString(), type.getText().toString(), color.getText().toString(), grade.getText().toString());
+            newProductPresenter.updateProduct(destination, productname.getText().toString(), order_val.getText().toString(), i_userId, unit.getText().toString(), String.valueOf(i_productId), description.getText().toString(), type.getText().toString(), color.getText().toString(), grade.getText().toString(),isPublishEnabled);
 
 
         } else if (btnsubmit.getText().toString().equalsIgnoreCase("Submit")) {

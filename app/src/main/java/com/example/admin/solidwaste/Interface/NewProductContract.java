@@ -50,7 +50,7 @@ public interface NewProductContract {
 
         ArrayList<String> UnitList();
 
-        void updateProduct(File file, String productName, String productcost, String userid, String productunit, String productid, String productdescrption, String type, String color, String grade);
+        void updateProduct(File file, String productName, String productcost, String userid, String productunit, String productid, String productdescrption, String type, String color, String grade, String isPubliseEnabled);
 
 
         void priceSuggession(String price, String type);

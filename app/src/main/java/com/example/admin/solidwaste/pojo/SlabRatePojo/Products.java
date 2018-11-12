@@ -7,6 +7,14 @@ import java.util.List;
 
 public class Products {
 
+    @SerializedName("StatusCode")
+    @Expose
+    private int StatusCode;
+
+    @SerializedName("StatusMessage")
+    @Expose
+    private String StatusMessage = null;
+
     @SerializedName("Products")
     @Expose
     private List<Product> products = null;
@@ -19,4 +27,19 @@ public class Products {
         this.products = products;
     }
 
+    public int getStatusCode() {
+        return StatusCode;
+    }
+
+    public void setStatusCode(int statusCode) {
+        StatusCode = statusCode;
+    }
+
+    public String getStatusMessage() {
+        return StatusMessage;
+    }
+
+    public void setStatusMessage(String statusMessage) {
+        StatusMessage = statusMessage;
+    }
 }

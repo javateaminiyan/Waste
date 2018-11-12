@@ -1,5 +1,6 @@
 package com.example.admin.solidwaste.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +26,7 @@ import com.example.admin.solidwaste.di.component.DaggerAdminApiComponent;
 import com.example.admin.solidwaste.di.module.AdminDashboardModule;
 import com.example.admin.solidwaste.di.module.NetworkClient;
 import com.example.admin.solidwaste.map.ViewDirections;
+import com.example.admin.solidwaste.pojo.AdminPojo.AdminDashboardPojoResponseResponse;
 import com.example.admin.solidwaste.presenter.AdminPresenter.AdminDash_Presenter;
 import com.example.admin.solidwaste.sharedprefshelper.SharedPrefModule;
 import com.example.admin.solidwaste.utils.CommonHelper;
@@ -61,27 +65,36 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
     DrawerLayout drawerLayout;
 
 
-    @BindView(R.id.im_productreg)
-    ImageView iv_ProductRegistration;
+    @BindView(R.id.im_processing)
+    ImageView im_processing;
 
-    @BindView(R.id.im_registeredproduct)
-    ImageView iv_registeredProduct;
+    @BindView(R.id.im_completed)
+    ImageView im_completed;
 
-    @BindView(R.id.im_slabrate)
-    ImageView iv_slabRate;
+    @BindView(R.id.im_pending)
+    ImageView im_pending;
 
-    @BindView(R.id.im_myRequest)
-    ImageView iv_MyRequest;
+    @BindView(R.id.im_collected)
+    ImageView im_collected;
 
     @BindView(R.id.navigation_view)
     NavigationView navigationView;
 
+    @BindView(R.id.badge_notification_collected)
+    TextView badge_notification_collected;
+
+    @BindView(R.id.badge_notification_processing)
+    TextView badge_notification_processing;
+
+    @BindView(R.id.badge_notification_pending)
+    TextView badge_notification_pending;
+
+    @BindView(R.id.badge_notification_completed)
+    TextView badge_notification_completed;
+
     @Inject
     SharedPreferences sharedPreferences;
 
-
-    @BindView(R.id.txt_userid)
-    TextView txt_userid;
 
     @Inject
     Retrofit retrofit;
@@ -90,6 +103,7 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
     @Inject
     AdminDash_Presenter adminDash_presenter;
 
+    ProgressDialog pd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +112,7 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Merchant DashBoard");
+        getSupportActionBar().setTitle("Admin DashBoard");
 
 
         DaggerAdminApiComponent.builder()
@@ -109,44 +123,55 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
                 .build()
                 .inject(this);
 
-        txt_userid.setText("User ID: " + sharedPreferences.getString(CommonHelper.sharedpref_userid, ""));
-
+        pd = new ProgressDialog(this,R.style.MyAlertDialogTheme);
         initNavigationDrawer();
         initMenu();
+
+        if(CommonHelper.isNetworkAvailable(getApplicationContext())){
+            //getcount here
+            adminDash_presenter.loadStatusCount(sharedPreferences.getString(CommonHelper.sharedpref_userid, ""));
+        }
 
 
     }
 
 
+
     private void initMenu() {
-        iv_ProductRegistration.setOnClickListener(new View.OnClickListener() {
+        im_processing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), NewProductActivity.class));
+                Intent i = new Intent(getApplicationContext(), MyRequestActivity.class);
+                i.putExtra("reqType", "Process");
+                startActivity(i);
             }
         });
 
-        iv_registeredProduct.setOnClickListener(new View.OnClickListener() {
+        im_completed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ViewProductActivity.class));
+                Intent i = new Intent(getApplicationContext(), MyRequestActivity.class);
+                i.putExtra("reqType", "Approved");
+                startActivity(i);
             }
         });
 
-        iv_slabRate.setOnClickListener(new View.OnClickListener() {
+        im_pending.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SlabRateActivity.class));
+                Intent i = new Intent(getApplicationContext(), MyRequestActivity.class);
+                i.putExtra("reqType", "pending");
+                startActivity(i);
 
             }
         });
 //
-        iv_MyRequest.setOnClickListener(new View.OnClickListener() {
+        im_collected.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent i = new Intent(getApplicationContext(), MyRequestActivity.class);
-                i.putExtra("type", "merchant");
+                i.putExtra("reqType", "Collected");
                 startActivity(i);
 
             }
@@ -177,8 +202,23 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
                         break;
                     case R.id.request:
                         Intent i = new Intent(getApplicationContext(), MyRequestActivity.class);
-                        i.putExtra("type", "merchant");
+                        i.putExtra("reqType", "merchant");
                         startActivity(i);
+                        drawerLayout.closeDrawers();
+                        break;
+
+                    case R.id.registration:
+                        startActivity(new Intent(getApplicationContext(), NewProductActivity.class));
+                        drawerLayout.closeDrawers();
+                        break;
+
+                    case R.id.slabdetails:
+                        startActivity(new Intent(getApplicationContext(), SlabRateActivity.class));
+                        drawerLayout.closeDrawers();
+                        break;
+
+                    case R.id.registereddetails:
+                        startActivity(new Intent(getApplicationContext(), ViewProductActivity.class));
                         drawerLayout.closeDrawers();
                         break;
 
@@ -202,18 +242,18 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
 
                         editor.putString(sharedpref_userid, null);
                         editor.putString(sharedpref_name, null);
-                        editor.putString(sharedpref_mobileno, "");
+                        editor.putString(sharedpref_mobileno, null);
 
 
-                        editor.putString(sharedpref_email, "");
-                        editor.putString(sharedpref_password, "");
+                        editor.putString(sharedpref_email, null);
+                        editor.putString(sharedpref_password, null);
 
                         editor.putString(sharedpref_city, null);
                         editor.putString(sharedpref_address, null);
 
                         //new Firebase Id
                         editor.putString(sharedpref_typeofuser, null);
-                        editor.putString(sharedpref_firebaseid, "");
+                        editor.putString(sharedpref_firebaseid, null);
                         editor.putString(sharedpref_latlng, null);
                         editor.putString(sharedpref_name_of_shop, null);
                         editor.putString(sharedpref_gstno, null);
@@ -261,6 +301,73 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
 
     }
 
+    public void showDialog(){
+        pd.show();
+    }
+
+    @Override
+    public void dismissDialog() {
+        pd.dismiss();
+    }
+
+
+
+    @Override
+    public void displayDashboardCoubt(AdminDashboardPojoResponseResponse[] adminDashboardPojoResponseResponses) {
+        if(adminDashboardPojoResponseResponses[0]!=null){
+
+            if(adminDashboardPojoResponseResponses[0].getProcessed()!=null)
+            {
+                if(!adminDashboardPojoResponseResponses[0].getProcessed().equalsIgnoreCase("0")){
+                    badge_notification_processing.setText(adminDashboardPojoResponseResponses[0].getProcessed());
+                    badge_notification_processing.setVisibility(View.VISIBLE);
+                }else{
+                    badge_notification_processing.setVisibility(View.GONE);
+                }
+
+            }else{
+                badge_notification_processing.setVisibility(View.GONE);
+            }
+
+
+            if(adminDashboardPojoResponseResponses[0].getPending()!=null){
+                if(!adminDashboardPojoResponseResponses[0].getPending().equalsIgnoreCase("0")){
+                    badge_notification_pending.setText(adminDashboardPojoResponseResponses[1].getPending());
+                    badge_notification_pending.setVisibility(View.VISIBLE);
+                }else{
+                    badge_notification_pending.setVisibility(View.GONE);
+                }
+
+            }else{
+                badge_notification_pending.setVisibility(View.GONE);
+            }
+            if(adminDashboardPojoResponseResponses[0].getCollected()!=null){
+                if(!adminDashboardPojoResponseResponses[0].getCollected().equalsIgnoreCase("0")){
+                    badge_notification_collected.setText(adminDashboardPojoResponseResponses[0].getCollected());
+                    badge_notification_collected.setVisibility(View.VISIBLE);
+                }else{
+                    badge_notification_collected.setVisibility(View.GONE);
+                }
+
+
+            }else{
+                badge_notification_collected.setVisibility(View.GONE);
+            }
+            if(adminDashboardPojoResponseResponses[0].getApproved()!=null){
+                if(!adminDashboardPojoResponseResponses[0].getApproved().equalsIgnoreCase("0")){
+                    badge_notification_completed.setText(adminDashboardPojoResponseResponses[0].getApproved());
+                    badge_notification_completed.setVisibility(View.VISIBLE);
+                }else{
+                    badge_notification_completed.setVisibility(View.GONE);
+                }
+            }else{
+                badge_notification_completed.setVisibility(View.GONE);
+            }
+
+        }
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -278,7 +385,6 @@ public class AdminDashboard extends AppCompatActivity implements IAdminDashboard
                 Intent i = new Intent(getApplicationContext(), NotificationActivity.class);
                 i.putExtra("type", "merchant");
                 i.putExtra("userid", sharedPreferences.getString(CommonHelper.sharedpref_userid, ""));
-
                 startActivity(i);
                 return true;
             default:

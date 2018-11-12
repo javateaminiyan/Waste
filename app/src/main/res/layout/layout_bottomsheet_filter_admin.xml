@@ -78,7 +78,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/edittext"
                     android:padding="10dp"
-                    android:text="Delivered" />
+                    android:text="Process" />
 
             </LinearLayout>
 

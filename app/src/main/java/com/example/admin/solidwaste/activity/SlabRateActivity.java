@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.admin.solidwaste.Interface.SlabRateContract;
@@ -93,5 +94,10 @@ public class SlabRateActivity extends AppCompatActivity implements SlabRateContr
             Toasty.normal(getApplicationContext(),"No data found",Toast.LENGTH_LONG).show();
 
         }
+    }
+
+    @Override
+    public void showResult(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

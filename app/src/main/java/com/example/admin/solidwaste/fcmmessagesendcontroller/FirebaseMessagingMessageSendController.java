@@ -179,7 +179,7 @@ public class FirebaseMessagingMessageSendController {
         jsonObject.put("title", "Product Order");
         jsonObject.put("body", "Product Order");
         jsonObject.put("image", img);
-        jsonObject.put("message", "you received order from this customer " + nameofuser + " ,product name " + productname + " , Qantity " + quantity + "");
+        jsonObject.put("message", "you received order from this customer " + nameofuser + " ,product name " + productname + " , Qantity " + quantity + "with in "+pickupdate);
         jsonObject.put("nameofuser", nameofuser);
         jsonObject.put("Merchantfirebaseid", merchant_firebaseid);
         jsonObject.put("Userfirebaseid", user_firebaseid);

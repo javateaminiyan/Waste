@@ -82,6 +82,13 @@
 
     </com.facebook.shimmer.ShimmerFrameLayout>
 
+    <TextView
+        android:id="@+id/tv_noData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="No Data Found!"/>
 
     <include layout="@layout/layout_bottomsheet_filter_admin" />
 

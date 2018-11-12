@@ -17,6 +17,8 @@ public interface MyRequestContract {
         void showDialog();
         void hideDialog();
 
+        void showResult(String msg);
+
 
     }
 
@@ -25,7 +27,7 @@ public interface MyRequestContract {
     }
 
     interface presenter{
-
+        void loadDataByOrderStatus(String userid, String utype, String reqType);
         void loadMyData(String userid, String utype);
 
     }
